@@ -1,0 +1,131 @@
+.toast {
+  background: $info-yellow-light;
+  max-width: 300px;
+  padding: 10px;
+  padding-right: 45px;
+  width: 100%;
+  box-shadow: $shadow;
+  border-radius: 30px;
+  display: flex;
+  border: 1px solid $black2;
+  opacity: 1;
+  flex-basis: unset;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 55px;
+
+  &:hover {
+    background: white;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &:before {
+    content: ' ';
+    height: 20px;
+    width: 20px;
+    background: $info-yellow;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 19px;
+    margin-top: -10px;
+    box-shadow: 0px 0px 0px 5px $info-yellow-light;
+  }
+
+  * {
+    z-index: 1;
+  }
+
+  .toast-title {
+    font-weight: 500;
+    margin-bottom: -3px;
+    margin-top: 2px;
+  }
+
+  .toast-message {
+    font-size: 0.8rem;
+    color: $black30;
+    margin-bottom: 2px;
+  }
+
+  .toast-progress {
+    background: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+.toast.toast-success {
+  background: $success-green-light;
+
+  &:before {
+    background: $success-green;
+    box-shadow: 0px 0px 0px 5px $success-green-light;
+  }
+}
+
+.toast.toast-error {
+  background: $error-red-light;
+
+  &:before {
+    background: $error-red;
+    box-shadow: 0px 0px 0px 5px $error-red-light;
+  }
+}
+
+#toast-container {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.close {
+  opacity: 1;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background $transition-short;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -15px;
+
+  svg {
+    height: 20px;
+    width: 20px;
+    stroke: $black30;
+  }
+
+  &:hover {
+    background: $white;
+
+    svg {
+      stroke: $black80;
+    }
+  }
+}

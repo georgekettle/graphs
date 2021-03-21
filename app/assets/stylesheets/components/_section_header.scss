@@ -1,0 +1,13 @@
+.section-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  .left {
+    h2 {
+      font-size: 1.2rem;
+      color: $black10;
+    }
+  }
+}

@@ -1,9 +1,96 @@
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "GT Walsheim", "Helvetica", "sans-serif";
+$headers-font: "GT Walsheim Condensed", "Helvetica", "sans-serif";
+
+$font: "GT Walsheim", "Helvetica", "sans-serif";
+$font-condensed: "GT Walsheim Condensed", "Helvetica", "sans-serif";
+
+// ----- Sharp Sans -----
+@font-face {
+  font-family: "Sharp Sans";
+  src: asset-url('SharpSansDispNo2-Book.woff') format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: asset-url('SharpSansDispNo2-Medium.woff') format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: asset-url('SharpSansDispNo2-Semibold.woff') format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: asset-url('SharpSansDispNo2-Bold.woff') format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: asset-url('SharpSansDispNo2-Extrabold.woff') format("woff");
+  font-weight: 800;
+}
+
+// ----- GT Walsheim Pro COndensed -----
+@font-face {
+  font-family: "GT Walsheim Condensed";
+  src: asset-url('GT-Walsheim-Pro-Condensed-Light.woff2') format("woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "GT Walsheim Condensed";
+  src: asset-url('GT-Walsheim-Pro-Condensed-Regular.woff2') format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Walsheim Condensed";
+  src: asset-url('GT-Walsheim-Pro-Condensed-Medium.woff2') format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "GT Walsheim Condensed";
+  src: asset-url('GT-Walsheim-Pro-Condensed-Bold.woff2') format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "GT Walsheim Condensed";
+  src: asset-url('GT-Walsheim-Pro-Condensed-Black.woff2') format("woff2");
+  font-weight: 800;
+}
+
+// ----- GT Walsheim Pro -----
+@font-face {
+  font-family: "GT Walsheim";
+  src: asset-url('GT-Walsheim-Pro-Regular.woff2') format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: asset-url('GT-Walsheim-Pro-Medium.woff2') format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: asset-url('GT-Walsheim-Pro-Bold.woff2') format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: asset-url('GT-Walsheim-Pro-Black.woff2') format("woff2");
+  font-weight: 800;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

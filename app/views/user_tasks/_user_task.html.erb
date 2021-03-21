@@ -1,0 +1,10 @@
+<% task = user_task.task %>
+<div class="task-container sortable-child" id="user-task-<%= user_task.id %>" data-sortable-id="<%= user_task.id %>" data-sortable-target="child" data-sortable-url=<%= user_position_user_task_url(user_task) %>>
+  <div class="task <%= "complete" if task.completed %>" id="task-<%= task.id %>" data-controller="task" data-task-target="task" data-task-toggle-url-value="<%= toggle_task_url(task) %>">
+    <%= link_to toggle_task_path(task), class: "checkbox", data: {action:"click->task#toggle"}, method: 'patch', remote: true do %>
+      <%= render 'icons/check' %>
+    <% end %>
+    <h5 class="task-name"><%= task.name %></h5>
+    <div class="drag-handle"></div>
+  </div>
+</div>

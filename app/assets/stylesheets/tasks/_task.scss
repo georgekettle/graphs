@@ -1,0 +1,70 @@
+#tasks {
+  outline: none;
+}
+
+
+.task-container {
+  padding-bottom: 5px;
+  outline: none;
+
+  .task {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid $black2;
+    display: flex;
+    align-items: center;
+    box-shadow: $shadow;
+    cursor: pointer;
+
+    .checkbox {
+      height: 30px;
+      width: 30px;
+      border-radius: 20px;
+      background: $black5;
+      border: 1px solid $black10;
+      margin-right: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        height: 15px;
+        stroke-width: 3px;
+        stroke: transparent;
+        transition: $transition-short;
+      }
+    }
+
+    .drag-handle {
+      width: 30px;
+      height: 30px;
+      background: $black10;
+      border-radius: 15px;
+    }
+  }
+
+  .task.complete {
+    .checkbox {
+      background: $black80;
+      border: 1px solid transparent;
+
+      svg {
+        height: 15px;
+        stroke-width: 3px;
+        stroke: white;
+      }
+    }
+  }
+}
+
+.task-container.draggable-over {
+  .task {
+    background: $black10;
+
+    * {
+      opacity: 0;
+    }
+  }
+}

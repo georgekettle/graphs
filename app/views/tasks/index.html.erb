@@ -1,0 +1,8 @@
+<%# render 'components/calendar' %>
+<%= render 'components/calendar_strip' %>
+<%# render 'components/section_header', title: 'Your Tasks', buttons: [render('components/icon_button', link:new_task_path, icon:'plus')] %>
+<% unless @user_tasks.empty? %>
+  <%= render 'user_tasks/user_tasks', user_tasks: @user_tasks %>
+<% else %>
+  <p style="text-align: center">There are no tasks</p>
+<% end %>

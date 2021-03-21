@@ -1,0 +1,8 @@
+<%= render 'components/banner_card', title: current_user.profile.full_name ,subtitle: "Welcome," %>
+<%= render 'components/section_header', title: 'Your Lists', buttons: [render('components/icon_button', link:new_task_path, icon:'plus')] %>
+
+<div id="task-lists">
+  <% @task_lists.each do |tl| %>
+    <%= render 'task_lists/task_list_card', task_list: tl %>
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<h3><%= current_user.profile.full_name %></h3>
+<% if @profile.user == current_user %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+<% end %>

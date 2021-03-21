@@ -1,0 +1,8 @@
+<div class="task-container">
+  <div class="task <%= "complete" if task.completed %>" id="task-<%= task.id %>" data-controller="task" data-task-target="task" data-task-toggle-url-value="<%= toggle_task_url(task) %>">
+    <%= link_to toggle_task_path(task), class: "checkbox", data: {action:"click->task#toggle"}, method: 'patch', remote: true do %>
+      <%= render 'icons/check' %>
+    <% end %>
+    <h5 class="task-name"><%= task.name %></h5>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+#calendar-strip {
+  height: 113px;
+  margin-bottom: 30px;
+}
+
+.week-dates-container {
+  margin: 0px -13px;
+}
+
+.calendar-strip-week {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  .weekday {
+    width: calc(100% / 7);
+    text-align: center;
+    text-transform: capitalize;
+    color: $primary;
+    font-weight: 500;
+    font-family: $font-condensed;
+  }
+}
+
+.fc .fc-toolbar-chunk .fc-button-primary {
+  display: none;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 1rem!important;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.3rem!important;
+  color: $black20;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+  background: $black10;
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px!important;
+  border: none!important;
+  margin-left: 5px!important;
+  box-shadow: none!important;
+
+  .fc-icon {
+    color: $black80;
+    font-size: 1.1em;
+  }
+
+  &:active {
+    background: $black20;
+  }
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
+  background: $black10;
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px!important;
+  border: none!important;
+  margin-left: 5px!important;
+  box-shadow: none!important;
+
+  .fc-icon {
+    color: $black80;
+    font-size: 1.1em;
+  }
+
+  &:active {
+    background: $black20;
+  }
+}
+
+.calendar-strip-dates {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  .date {
+    width: calc(100% / 7);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    .date-card {
+      background-color: transparent;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: center;
+      height: 30px;
+      width: 30px;
+      transition: $transition-short;
+
+      h4 {
+        color: $black30;
+        font-size: 1rem;
+        margin: 0px;
+        font-weight: 400;
+        transition: $transition-short;
+      }
+    }
+
+    &:hover {
+      .date-card {
+        background: $black10;
+
+        h4 {
+          color: $black80;
+        }
+      }
+    }
+  }
+
+  .date.today {
+    .date-card {
+      background: $primary_light;
+
+      h4 {
+        color: $primary;
+      }
+    }
+  }
+
+  .date.selected {
+    .date-card {
+      background: $black80;
+
+      h4 {
+        color: white;
+      }
+    }
+  }
+}
