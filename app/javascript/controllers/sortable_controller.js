@@ -42,7 +42,7 @@ export default class extends Controller {
   }
 
   handleError(data) {
-    toastr.error("Sorting tasks failed", "Oopsie Diasy");
+    toastr.error("Sorting tasks failed", "Oopsie Diasy"); // toast notification
     const originalPosition = parseInt(data.original_position, 10) - 1;
     const userTaskId = data.item.id;
     const task = this.parentTarget.querySelector(`#user-task-${userTaskId}`);
