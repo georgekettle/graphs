@@ -19,9 +19,9 @@ user3 = User.create(email: 'ben@gmail.com', password: 'secret')
 puts "finished creating users"
 
 puts "creating profiles"
-user1_profile = Profile.create(first_name: 'George', last_name: 'Kettle', bio: 'Web developer and lover of all things design', user: user1)
-user2_profile = Profile.create(first_name: 'Emma', last_name: 'Lyons', bio: 'Customer service specialist and passionate yogi/pilates instructor', user: user2)
-user2_profile = Profile.create(first_name: 'Ben', last_name: 'Quatermaine', bio: 'Ausmed 4 life bby', user: user3)
+user1_profile = Profile.create(first_name: 'George', last_name: 'Kettle', bio: 'Web developer and lover of all things design', user_id: user1.id)
+user2_profile = Profile.create(first_name: 'Emma', last_name: 'Lyons', bio: 'Customer service specialist and passionate yogi/pilates instructor', user_id: user2.id)
+user2_profile = Profile.create(first_name: 'Ben', last_name: 'Quatermaine', bio: 'Ausmed 4 life bby', user_id: user3.id)
 puts "finished creating profiles"
 
 puts "creating task lists"
