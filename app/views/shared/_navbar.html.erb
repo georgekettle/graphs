@@ -12,7 +12,7 @@
     <%= link_to dashboard_path, class: 'navbar-link' do %>
       <%= render 'icons/bell' %>
     <% end %>
-    <%= link_to dashboard_path, class: 'navbar-link' do %>
+    <%= link_to profile_path(current_user.profile), class: 'navbar-link' do %>
       <%= render 'icons/face' %>
     <% end %>
   </div>
