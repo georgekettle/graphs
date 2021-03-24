@@ -1,0 +1,15 @@
+<% left ||= nil %>
+<% subheader ||= nil %>
+
+<div class="header">
+  <% unless left %>
+    <%= link_to :back, class: 'icon-btn flat-grey' do %>
+      <%= render 'icons/arrow_left' %>
+    <% end %>
+  <% end %>
+
+  <% if subheader %>
+    <h4><%= subheader %></h4>
+  <% end %>
+  <h2><%= header.capitalize %></h2>
+</div>

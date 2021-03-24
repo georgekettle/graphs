@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tasks do
     member do
       patch :toggle
+      get :members
     end
     resources :user_tasks, only: [ :create ]
   end
