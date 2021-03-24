@@ -11,6 +11,7 @@
     <% end %>
     <h5 class="task-name"><%= task.name %></h5>
     <div class="extra-info">
+      <%= render "components/avatars/avatar_stack", profiles: user_task.task_team, size: "small" %>
       <%= render "task_lists/badge", task_list: user_task.task_list %>
     </div>
     <div class="drag-handle">
