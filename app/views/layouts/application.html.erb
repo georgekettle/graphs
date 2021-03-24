@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render('shared/navbar') if user_signed_in? %>
     <div class="body">
       <%= yield %>
     </div>

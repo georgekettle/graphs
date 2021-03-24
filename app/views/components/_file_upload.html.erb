@@ -1,0 +1,20 @@
+<% classes ||= "" %>
+
+<div id="file-upload" class="upload-container <%= "uploaded" if attachment.attached? %> <%= classes %>" data-controller="file-uploader" data-file-uploader-target="container" data-file-uploader-direct-upload-url-value="<%= rails_direct_uploads_url %>" data-file-uploader-cloudinary-username-value="<%= ENV["CLOUDINARY_USERNAME"] %>">
+  <%= form.label field, class: "drop-zone" do %>
+    <div class="svg-container">
+      <%= render 'icons/upload' %>
+    </div>
+    <h4>Drop your image here, or <span>browse</span></h4>
+  <% end %>
+  <div class="image-container">
+    <%= cl_image_tag(attachment.key, data: {file_uploader_target: "preview"} ) if attachment.attached? %>
+    <%= image_tag("", data: {file_uploader_target: "preview"} ) unless attachment.attached? %>
+    <div class="progress" data-file-uploader-target="progress"></div>
+    <div class="loader"></div>
+    <div class="remove-upload" data-action="click->file-uploader#removeAllUploads">
+      <%= render 'icons/close' %>
+    </div>
+  </div>
+  <%= form.input field, as: :file, direct_upload: true, :input_html => { :data => {file_uploader_target: "input", action: "change->file-uploader#uploadFile"} } %>
+</div>

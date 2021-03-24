@@ -1,4 +1,28 @@
-<h3><%= current_user.profile.full_name %></h3>
-<% if @profile.user == current_user %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
-<% end %>
+<div class="profile">
+  <div class="profile-cover">
+
+  </div>
+
+  <%= render "components/avatars/avatar", profile: @profile, size: "large", classes: "profile-avatar" %>
+
+  <h3><%= current_user.profile.full_name %></h3>
+  <div class="contact-options">
+    <%= link_to '#', class: "contact-link instagram" do %>
+      <%= render 'icons/instagram' %>
+    <% end %>
+    <%= link_to '#', class: "contact-link facebook" do %>
+      <%= render 'icons/facebook' %>
+    <% end %>
+    <%= link_to '#', class: "contact-link phone" do %>
+      <%= render 'icons/phone' %>
+    <% end %>
+    <%= link_to '#', class: "contact-link email" do %>
+      <%= render 'icons/email' %>
+    <% end %>
+  </div>
+  <!-- <p><%= current_user.profile.bio %></p> -->
+  <% if @profile.user == current_user %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+    <%= link_to 'Edit profile', edit_profile_path(@profile), class: 'btn' %>
+  <% end %>
+</div>

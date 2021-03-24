@@ -1,2 +1,6 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% unless user_signed_in? %>
+  <%= link_to "Login", new_user_session_path, class: 'btn' %>
+  <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,199 @@
+.upload-container {
+  cursor: pointer;
+  background: $black5;
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+  .image-container {
+    height: 0px;
+    width: 0px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .progress {
+      background: rgba(0,0,0,0.8);
+      height: 100%;
+      width: 0%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transition: $transition-long
+    }
+
+    .remove-upload {
+      background: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      box-shadow: $shadow;
+
+      svg {
+        height: 15px;
+        stroke: $error-red;
+        stroke-width: 2px;
+        cursor: pointer;
+      }
+    }
+
+    .loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -15px;
+      margin-top: -15px;
+      display: none;
+    }
+  }
+
+  .form-group {
+    display: none;
+  }
+
+  .drop-zone {
+    padding: 40px;
+    border: dashed 2px $black10;
+    border-radius: 20px;
+    background: transparent;
+    text-align: center;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .svg-container {
+      background: $primary;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      margin-bottom: 10px;
+
+      svg {
+        stroke: white;
+        stroke-width: 1.5px;
+        height: 30px;
+        width: 30px;
+        margin-bottom: 5px;
+      }
+    }
+
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 140px;
+
+      span {
+        color: $primary;
+        // border-bottom: 0px solid $primary;
+        box-shadow: inset 0px 0px 0px $primary;
+        transition: 0.2s box-shadow ease-out;
+
+        &:hover {
+          // text-decoration: underline;
+          // text-decoration-color: $primary;
+          // border-bottom: 3px solid $primary;
+          box-shadow: inset 0px -2px 0px $primary;
+        }
+      }
+    }
+
+  }
+
+  &:hover {
+
+    .drop-zone {
+      border: dashed 2px $primary;
+      background: $primary_light
+    }
+  }
+}
+
+.upload-container.drag-over {
+  border: dashed 2px $primary;
+  background: $primary_light;
+
+  svg {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+.upload-container.uploaded {
+  background: transparent;
+
+  .image-container {
+    height: unset;
+    width: 150px;
+
+    .progress {
+      display: none;
+    }
+  }
+
+  .drop-zone {
+    display: none;
+  }
+}
+
+.upload-container.uploading {
+  background: transparent;
+
+  .image-container {
+    height: unset;
+    width: 150px;
+
+    .loader {
+      display: flex;
+    }
+
+    .remove-upload {
+      display: none;
+    }
+  }
+
+  .drop-zone {
+    display: none;
+  }
+}
+
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+

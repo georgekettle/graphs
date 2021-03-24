@@ -1,10 +1,21 @@
 <% task = user_task.task %>
 <div class="task-container sortable-child" id="user-task-<%= user_task.id %>" data-sortable-id="<%= user_task.id %>" data-sortable-target="child" data-sortable-url=<%= user_position_user_task_url(user_task) %>>
-  <div class="task <%= "complete" if task.completed %>" id="task-<%= task.id %>" data-controller="task" data-task-target="task" data-task-toggle-url-value="<%= toggle_task_url(task) %>">
+  <div class="task <%= "complete" if task.completed %>"
+      id="task-<%= task.id %>"
+      style="background: <%= user_task.task_list.color %>"
+      data-controller="task"
+      data-task-target="task"
+      data-task-toggle-url-value="<%= toggle_task_url(task) %>">
     <%= link_to toggle_task_path(task), class: "checkbox", data: {action:"click->task#toggle"}, method: 'patch', remote: true do %>
-      <%= render 'icons/check' %>
+      <%= render 'icons/check', style: "stroke: #{user_task.task_list.color}" %>
     <% end %>
     <h5 class="task-name"><%= task.name %></h5>
-    <div class="drag-handle"></div>
+    <div class="extra-info">
+      <%= render "components/avatars/avatar_stack", profiles: user_task.task_team, size: "small" %>
+      <%= render "task_lists/badge", task_list: user_task.task_list %>
+    </div>
+    <div class="drag-handle">
+      <%= render 'icons/grip_vertical' %>
+    </div>
   </div>
 </div>

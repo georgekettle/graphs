@@ -1,0 +1,13 @@
+<% classes ||= "" %>
+<% size ||= "medium" %>
+
+<div class="avatar-stack">
+  <% profiles.each_with_index do |profile, index| %>
+    <%= render "components/avatars/avatar", profile: profile, size: size, classes: classes, style: "z-index: #{profiles.length - index}" %>
+  <% end %>
+  <% if profiles.length > 3 %>
+    <div class="more-than-three">
+      <h6>+<%= profiles.length - 3 %> others</h6>
+    </div>
+  <% end %>
+</div>

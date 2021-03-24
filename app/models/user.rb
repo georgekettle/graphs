@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :tasks, through: :user_tasks
   has_one :profile, dependent: :destroy
 
+  # after_create :set_profile # May neeed this in future
+
   def user_tasks_on_date(date) # date is Date object
     join_query = "JOIN tasks ON user_tasks.task_id = tasks.id"
     self.user_tasks.joins(join_query)
@@ -17,6 +19,11 @@ class User < ApplicationRecord
   end
 
   private
+
+  # def set_profile
+  #   profile = Profile.create()
+  #   self.profile = profile
+  # end
 
   def datetime_range(date)
     date_time = date.to_datetime

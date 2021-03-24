@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       patch '/user_position', to: 'user_tasks#change_user_position', as: 'user_position'
     end
   end
-  resources :profiles, only: [:show]
+  resources :profiles, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,7 @@
+<% classes ||= "" %>
+<% style ||= "" %>
+<% size ||= "medium" %>
+
+<div class="avatar avatar-<%= size %> <%= classes %>" style="<%= style %>">
+  <%= cl_image_tag(profile.avatar.key) if profile.avatar.attached? %>
+</div>
