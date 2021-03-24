@@ -2,5 +2,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :bio %>
-  <%= f.input :avatar %>
+  <%= f.label :avatar %>
+  <%= render 'components/file_upload', attachment: @profile.avatar, form: f, field: :avatar, classes: "profile-upload" %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>

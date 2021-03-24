@@ -9,25 +9,9 @@
   }
 
   .profile-avatar {
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
-    background: $black5;
-    border: 2px solid white;
-    box-shadow: $shadow;
     margin: 0px auto;
     margin-top: -40px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:before {
-      content: '🤓';
-      font-size: 2.5rem;
-      margin-bottom: -5px;
-      text-shadow: $shadow;
-    }
   }
 
   .contact-options {
