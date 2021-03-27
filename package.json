@@ -13,7 +13,6 @@
     "activestorage": "^5.2.4-5",
     "animejs": "^3.2.1",
     "autoprefixer": "^10.2.5",
-    "bootstrap": "^4.6.0",
     "filepond": "^4.26.0",
     "fullcalendar": "^5.5.1",
     "jquery": "^3.6.0",
