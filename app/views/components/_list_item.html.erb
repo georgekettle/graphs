@@ -1,0 +1,24 @@
+<% link ||= nil %>
+<% id ||= "" %>
+
+<% if link %>
+  <%= link_to link, class: 'list-item', id: id do %>
+    <div class="left">
+      <%= image.html_safe %>
+      <h4><%= title %></h4>
+    </div>
+    <% options.each do |option| %>
+      <%= option.html_safe %>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class="list-item" id='<%= id %>'>
+    <div class="left">
+      <%= image.html_safe %>
+      <h4><%= title %></h4>
+    </div>
+    <% options.each do |option| %>
+      <%= option.html_safe %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:update, :toggle, :members]
+  layout "no_navbar", :only => [ :new, :members ]
+
   def new
     @task = Task.new
   end

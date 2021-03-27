@@ -1,0 +1,41 @@
+.icon-input {
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+
+  svg {
+    height: 20px;
+    width: 20px;
+    flex-shrink: 0;
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    background: transparent;
+  }
+}
+
+.icon-input.highlight {
+  background: $primary_light;
+
+  // svg {
+  //   stroke: $primary
+  // }
+
+  svg {
+    height: 30px;
+    width: 30px;
+    background: $primary;
+    border-radius: 20px;
+    padding: 7px;
+    stroke: white;
+    // box-shadow: $shadow;
+  }
+}

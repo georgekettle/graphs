@@ -1,0 +1,1 @@
+<%= render 'components/list_item', link: profile_path(profile), image: render(partial: 'components/avatars/avatar', locals: { profile: profile, size: "medium" }), title: profile.full_name, options: ["<div class='icon-btn flat-grey'>#{render(partial: 'icons/chevron_right')}</div>"] %>

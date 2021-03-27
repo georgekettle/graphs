@@ -1,0 +1,28 @@
+.checkbox {
+  background: $black5;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 1px solid $black10;
+
+  svg {
+    opacity: 0;
+    stroke-width: 2px;
+  }
+}
+
+.selected {
+  .checkbox {
+    background: $black80;
+    border: 1px solid $black80;
+
+    svg {
+      opacity: 1;
+      stroke: white;
+    }
+  }
+}
