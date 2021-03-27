@@ -23,7 +23,10 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
+// import "bootstrap";
+// Tailwind
+import "stylesheets/application";
+
 
 // Internal imports, e.g:
 import { initCalendar, initCalendarStrip } from '../components/calendar'
