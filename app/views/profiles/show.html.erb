@@ -5,7 +5,7 @@
 
   <%= render "components/avatars/avatar", profile: @profile, size: "large", classes: "profile-avatar" %>
 
-  <h3><%= current_user.profile.full_name %></h3>
+  <h3><%= @profile.full_name %></h3>
   <div class="contact-options">
     <%= link_to '#', class: "contact-link instagram" do %>
       <%= render 'icons/instagram' %>

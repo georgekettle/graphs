@@ -1,5 +1,6 @@
 class UserTask < ApplicationRecord
   belongs_to :user
+  has_one :profile, through: :user
   belongs_to :task
   belongs_to :task_list
   acts_as_list scope: :user, column: :user_position

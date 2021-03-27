@@ -1,0 +1,37 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $black1;
+  border: 1px solid $black5;
+  box-shadow: none;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  transition: $transition-short;
+
+  .left {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      margin-right: 10px;
+    }
+
+    h4 {
+      font-size: 1rem;
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    // border: 1px solid white;
+    background: white;
+    box-shadow: $shadow;
+
+    .avatar {
+      box-shadow: none;
+    }
+  }
+}

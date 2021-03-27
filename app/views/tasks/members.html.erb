@@ -1,0 +1,10 @@
+<%= render "components/header", header: "Users", right: [{icon: 'plus', link: new_task_user_task_path(@task), classes: 'icon-btn-primary'}] %>
+
+<% @profiles.each do |profile| %>
+  <%= render 'components/list_item',
+    link: profile_path(profile),
+    image: render('components/avatars/avatar', profile: profile, size: "medium"),
+    title: profile.full_name,
+    options: ["<div class='icon-btn flat-grey'>#{render('icons/chevron_right')}</div>"]
+  %>
+<% end %>

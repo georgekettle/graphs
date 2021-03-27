@@ -1,0 +1,28 @@
+<% left ||= nil %>
+<% right ||= nil %>
+<% subheader ||= nil %>
+
+<div class="header">
+  <div class="center-content">
+    <% if subheader %>
+      <h4><%= subheader %></h4>
+    <% end %>
+    <h2><%= header.capitalize %></h2>
+  </div>
+
+  <% unless left %>
+    <%= link_to :back, class: 'icon-btn flat-grey' do %>
+      <%= render 'icons/arrow_left' %>
+    <% end %>
+  <% else %>
+
+  <% end %>
+
+  <% if right %>
+    <% right.each do |button_hash| %>
+      <%= link_to button_hash[:link], class: "icon-btn #{button_hash[:classes]}" do %>
+        <%= render "icons/#{button_hash[:icon]}" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

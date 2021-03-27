@@ -1,5 +1,5 @@
 body {
-  background: $black1;
+  background: white;
 }
 
 h1, h2 {
@@ -31,4 +31,8 @@ p {
 h6 {
   color: $black50;
   font-size: 0.9rem;
+}
+
+.display-none {
+  display: none!important;
 }
