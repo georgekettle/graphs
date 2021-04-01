@@ -1,6 +1,9 @@
 #calendar-strip {
-  height: 113px;
-  margin-bottom: 30px;
+  height: 130px;
+  margin-bottom: 20px;
+  background: $black2;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .week-dates-container {
@@ -16,9 +19,10 @@
     width: calc(100% / 7);
     text-align: center;
     text-transform: capitalize;
-    color: $primary;
+    color: $black80;
     font-weight: 500;
-    font-family: $font-condensed;
+    font-family: $font;
+    font-size: 0.8rem;
   }
 }
 
@@ -31,12 +35,12 @@
 }
 
 .fc .fc-toolbar-title {
-  font-size: 1.3rem!important;
+  font-size: 1rem!important;
   color: $black20;
 }
 
 .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
-  background: $black10;
+  background: white;
   width: 30px;
   height: 30px;
   border: none;
@@ -46,7 +50,7 @@
   border-radius: 20px!important;
   border: none!important;
   margin-left: 5px!important;
-  box-shadow: none!important;
+  box-shadow: $shadow!important;
 
   .fc-icon {
     color: $black80;
@@ -59,7 +63,7 @@
 }
 
 .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
-  background: $black10;
+  background: white;
   width: 30px;
   height: 30px;
   border: none;
@@ -69,7 +73,7 @@
   border-radius: 20px!important;
   border: none!important;
   margin-left: 5px!important;
-  box-shadow: none!important;
+  box-shadow: $shadow!important;
 
   .fc-icon {
     color: $black80;
@@ -129,7 +133,7 @@
 
   .date.today {
     .date-card {
-      background: $primary_light;
+      background: white;
 
       h4 {
         color: $primary;
