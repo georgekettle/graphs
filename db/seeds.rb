@@ -11,7 +11,6 @@ TaskList.destroy_all
 UserTask.destroy_all
 User.destroy_all
 
-
 puts "creating users"
 user1 = User.create(email: 'george@gmail.com', password: 'secret')
 user2 = User.create(email: 'emma@gmail.com', password: 'secret')
@@ -20,8 +19,13 @@ puts "finished creating users"
 
 puts "creating profiles"
 user1_profile = Profile.create(first_name: 'George', last_name: 'Kettle', bio: 'Web developer and lover of all things design', user_id: user1.id)
+user1_profile.avatar.attach(io: File.open('app/assets/images/george.jpg'), filename: 'george.jpg')
+
 user2_profile = Profile.create(first_name: 'Emma', last_name: 'Lyons', bio: 'Customer service specialist and passionate yogi/pilates instructor', user_id: user2.id)
-user2_profile = Profile.create(first_name: 'Ben', last_name: 'Quatermaine', bio: 'Ausmed 4 life bby', user_id: user3.id)
+user2_profile.avatar.attach(io: File.open('app/assets/images/emma.jpg'), filename: 'emma.jpg')
+
+user3_profile = Profile.create(first_name: 'Ben', last_name: 'Quatermaine', bio: 'Ausmed 4 life bby', user_id: user3.id)
+user3_profile.avatar.attach(io: File.open('app/assets/images/ben.jpg'), filename: 'ben.jpg')
 puts "finished creating profiles"
 
 puts "creating task lists"
@@ -110,42 +114,42 @@ puts "creating user tasks"
 user_tasks = [
   {
     task: Task.first, #'GN bevs'
-    user: user1,
+    user_id: user1.id,
     task_list: user1.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.first, #'GN bevs'
-    user: user3,
+    user_id: user3.id,
     task_list: user3.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.second, #'Pilates assignment'
-    user: user2,
+    user_id: user2.id,
     task_list: user2.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.third, #'40km cycle'
-    user: user1,
+    user_id: user1.id,
     task_list: user1.task_lists.second,
     task_list_position: 2,
     user_position: 2
   },
   {
     task: Task.third, #'40km cycle'
-    user: user3,
+    user_id: user3.id,
     task_list: user3.task_lists.second,
     task_list_position: 2,
     user_position: 2
   },
   {
     task: Task.last,
-    user: user1,
+    user_id: user1.id,
     task_list: user1.task_lists.second,
     task_list_position: 3,
     user_position: 3
