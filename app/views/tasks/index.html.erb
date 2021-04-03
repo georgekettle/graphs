@@ -1,6 +1,6 @@
 <%# render 'components/calendar' %>
 <%= render 'components/calendar_strip' %>
-<%# render 'components/section_header', title: 'Your Tasks', buttons: [render('components/icon_button', link:new_task_path, icon:'plus')] %>
+<%= render 'components/section_header', title: 'Your Tasks', buttons: [render('components/icon_button', link:new_task_path, icon:'plus', classes:'icon-btn-primary')] %>
 <% unless @user_tasks.empty? %>
   <%= render 'user_tasks/user_tasks', user_tasks: @user_tasks %>
 <% else %>
