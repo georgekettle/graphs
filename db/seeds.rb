@@ -78,26 +78,22 @@ puts "creating tasks"
 tasks = [
   {
     name: 'GN bevs',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: false
   },
   {
     name: 'Pilates assignment',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: true
   },
   {
     name: '40km cycle',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: false
   },
   {
     name: '5km Run',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.tomorrow,
     completed: false
   }
 ]

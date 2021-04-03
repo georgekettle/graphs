@@ -15,9 +15,7 @@ class User < ApplicationRecord
   def user_tasks_on_date(date) # date is Date object
     join_query = "JOIN tasks ON user_tasks.task_id = tasks.id"
     self.user_tasks.joins(join_query)
-      .where(tasks: { start: datetime_range(date) })
-      .or(self.user_tasks.joins(join_query)
-      .where(tasks: { end: datetime_range(date) }))
+      .where(tasks: { start_date: date })
   end
 
   private
@@ -30,9 +28,4 @@ class User < ApplicationRecord
   #   profile = Profile.create()
   #   self.profile = profile
   # end
-
-  def datetime_range(date)
-    date_time = date.to_datetime
-    date_time.beginning_of_day..date_time.end_of_day
-  end
 end
