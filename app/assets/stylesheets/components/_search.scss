@@ -1,0 +1,17 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .loader {
+    margin: 30px auto;
+  }
+
+  .results {
+    width: 100%;
+  }
+
+  .icon-input:first-of-type {
+    margin-bottom: 15px;
+  }
+}

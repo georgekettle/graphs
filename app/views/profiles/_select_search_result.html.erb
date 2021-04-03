@@ -1,0 +1,12 @@
+<div class="list-item" id="profile-<%= profile.id %>" data-profile="<%= profile.to_json %>" data-action='click->user-select#selectResult'>
+  <div class="left">
+    <%= render('components/avatars/avatar', profile: profile, size: "medium") %>
+    <h4><%= profile.full_name %></h4>
+  </div>
+  <div class="checkbox">
+    <%= render 'icons/check' %>
+  </div>
+  <div id="selected-elem" class="display-none">
+    <%= render 'profiles/selected_search_result', profile: profile %>
+  </div>
+</div>

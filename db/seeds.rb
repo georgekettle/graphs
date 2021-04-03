@@ -78,26 +78,22 @@ puts "creating tasks"
 tasks = [
   {
     name: 'GN bevs',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: false
   },
   {
     name: 'Pilates assignment',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: true
   },
   {
     name: '40km cycle',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.today,
     completed: false
   },
   {
     name: '5km Run',
-    start: DateTime.now,
-    end: DateTime.now,
+    start_date: Date.tomorrow,
     completed: false
   }
 ]
@@ -111,42 +107,42 @@ user_tasks = [
   {
     task: Task.first, #'GN bevs'
     user: user1,
-    task_list: TaskList.first,
+    task_list: user1.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.first, #'GN bevs'
     user: user3,
-    task_list: TaskList.second,
+    task_list: user3.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.second, #'Pilates assignment'
     user: user2,
-    task_list: TaskList.fifth,
+    task_list: user2.task_lists.second,
     task_list_position: 1,
     user_position: 1
   },
   {
     task: Task.third, #'40km cycle'
     user: user1,
-    task_list: TaskList.second,
+    task_list: user1.task_lists.second,
     task_list_position: 2,
     user_position: 2
   },
   {
     task: Task.third, #'40km cycle'
     user: user3,
-    task_list: TaskList.first,
+    task_list: user3.task_lists.second,
     task_list_position: 2,
     user_position: 2
   },
   {
     task: Task.last,
     user: user1,
-    task_list: TaskList.find(6),
+    task_list: user1.task_lists.second,
     task_list_position: 3,
     user_position: 3
   }

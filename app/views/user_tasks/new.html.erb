@@ -1,0 +1,23 @@
+<%= render "components/header", header: "Choose people" %>
+
+<div class="search-container" data-controller="user-select" data-user-select-url-value='<%= select_search_profiles_url %>'>
+  <%= render "components/forms/icon_input",
+    classes:"highlight member-search",
+    icon:"search",
+    input:"<input type='text' placeholder='Search for a user' class='search-bar' data-user-select-target='search' data-action='keyup->user-select#updateSearch'>" %>
+
+  <div class="selected-container" data-user-select-target="selected"></div>
+
+  <div class="loader display-none" data-user-select-target="loader"></div>
+
+  <div data-user-select-target="results" class="results"></div>
+
+  <div data-user-select-target="default-results"></div>
+
+  <button class="btn btn-primary submit-button display-none" data-user-select-target="submit" data-action='click->user-select#submitForm'>Finish</button>
+
+  <%= simple_form_for [@task, @user_task], class: 'display-none', data: { user_select_target:"form" } do |f| %>
+    <%= f.input :profile_id, as: :hidden, collection: [], input_html: { value: [], multiple: true, data: { user_select_target:"input" } } %>
+  <% end %>
+</div>
+

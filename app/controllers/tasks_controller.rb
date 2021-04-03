@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:update, :toggle]
+  before_action :set_task, only: [:update, :toggle, :members]
+  layout "no_navbar", :only => [ :new, :members ]
+
   def new
     @task = Task.new
   end
@@ -22,6 +24,10 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.json { render json: @task }
     end
+  end
+
+  def members
+    @profiles = @task.profiles
   end
 
   private

@@ -1,0 +1,6 @@
+<% classes ||= "" %>
+
+<div class="icon-input <%= classes %>" data-controller="icon-input" data-icon-input-target="container" data-action="click->icon-input#focusInput">
+  <%= render "icons/#{icon}" %>
+  <%= input.html_safe %>
+</div>

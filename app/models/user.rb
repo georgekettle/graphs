@@ -8,25 +8,24 @@ class User < ApplicationRecord
   has_many :tasks, through: :user_tasks
   has_one :profile, dependent: :destroy
 
+  after_create :set_default_task_list
+
   # after_create :set_profile # May neeed this in future
 
   def user_tasks_on_date(date) # date is Date object
     join_query = "JOIN tasks ON user_tasks.task_id = tasks.id"
     self.user_tasks.joins(join_query)
-      .where(tasks: { start: datetime_range(date) })
-      .or(self.user_tasks.joins(join_query)
-      .where(tasks: { end: datetime_range(date) }))
+      .where(tasks: { start_date: date })
   end
 
   private
+
+  def set_default_task_list
+    task_list = TaskList.create(user: self, emoji: '🌟', name: 'default', color: "#FFFFFF")
+  end
 
   # def set_profile
   #   profile = Profile.create()
   #   self.profile = profile
   # end
-
-  def datetime_range(date)
-    date_time = date.to_datetime
-    date_time.beginning_of_day..date_time.end_of_day
-  end
 end

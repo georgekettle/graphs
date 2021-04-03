@@ -1,12 +1,10 @@
 import * as lottie from 'lottie-web'
 
 const initLoaders = () => {
-  console.log('initLoaders');
   let loaders = document.querySelectorAll('.loader');
 
   if (loaders) {
     loaders.forEach((loader) => {
-      console.log(loader)
       lottie.loadAnimation({
         container: loader,
         renderer: 'svg',
