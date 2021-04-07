@@ -6,107 +6,117 @@
 .task-container {
   padding-bottom: 5px;
   outline: none;
+  position: relative;
+
+  .checkbox {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background: $black5;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    svg {
+      height: 15px;
+      stroke-width: 3px;
+      stroke: transparent;
+      transition: $transition-short;
+      opacity: 0;
+    }
+  }
+
+  .extra-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+  }
+
+  .extra-info > * {
+    margin-left: 5px;
+  }
 
   .task {
     background: white;
     padding: 10px;
     padding-left: 45px;
     padding-top: 13px;
-    border-radius: 22px;
-    box-shadow: $shadow;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid $black5;
     cursor: pointer;
     position: relative;
 
-    .checkbox {
-      height: 30px;
-      width: 30px;
-      border-radius: 20px;
-      background: $white50;
-      margin-right: 10px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-
-      svg {
-        height: 15px;
-        stroke-width: 3px;
-        stroke: transparent;
-        transition: $transition-short;
-        opacity: 0;
-      }
-    }
 
     h5 {
-      color: white;
       font-family: $font;
       letter-spacing: -0.5px;
     }
 
-    .extra-info {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 5px;
-    }
+    // .drag-handle {
+    //   width: 30px;
+    //   height: 30px;
+    //   background: transparent;
+    //   border-radius: 15px;
+    //   transition: $transition-short;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   position: absolute;
+    //   top: 10px;
+    //   right: 10px;
 
-    .extra-info > * {
-      margin-left: 5px;
-    }
+    //   svg {
+    //     height: 20px;
+    //     width: 20px;
+    //     stroke: $black10;
+    //   }
 
-    .drag-handle {
-      width: 30px;
-      height: 30px;
-      background: transparent;
-      border-radius: 15px;
-      transition: $transition-short;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 10px;
-      right: 10px;
+    //   &:hover {
+    //     background: $black10;
 
-      svg {
-        height: 20px;
-        width: 20px;
-        stroke: $white20;
-      }
-
-      &:hover {
-        background: $white50;
-
-        svg {
-          stroke: $white;
-        }
-      }
-    }
+    //     svg {
+    //       stroke: $black60;
+    //     }
+    //   }
+    // }
   }
+}
 
-  .task.complete {
-    .checkbox {
-      background: white;
+.task-container.complete {
+  .checkbox {
+    background: $success-green;
+    border-color: $success-green;
+    box-shadow: none!important;
 
-      svg {
-        opacity: 1;
-        stroke-width: 3px;
-        stroke: $black80;
-      }
+    svg {
+      opacity: 1;
+      stroke-width: 3px;
+      stroke: $white;
     }
   }
 }
 
 .task-container.draggable-over {
   .task {
-    opacity: 0.2;
     border: none;
+    background: $black5;
 
     * {
       opacity: 0;
     }
+  }
+
+  .checkbox, .extra-info {
+    opacity: 0;
   }
 }
