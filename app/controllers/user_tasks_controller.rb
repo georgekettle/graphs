@@ -39,10 +39,7 @@ class UserTasksController < ApplicationController
   end
 
   def change_user_position
-    date = @user_task.task.start_date
-    current_user.user_tasks_on_date(date).reverse.each do |user_task|
-      user_task.move_to_top
-    end
+    reset_order
     if params[:position] && @user_task.insert_at(params[:position].to_i)
       respond_to do |format|
         format.json { render json: @user_task }
@@ -64,6 +61,13 @@ class UserTasksController < ApplicationController
   end
 
   private
+
+  def reset_order
+    date = @user_task.task.start_date
+    current_user.user_tasks_on_date(date).reverse.each do |user_task|
+      user_task.move_to_top # move each to top position so they are 1..N
+    end
+  end
 
   def set_profiles
     params[:user_task][:profile_id].map do |profile_id|
