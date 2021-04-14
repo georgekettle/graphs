@@ -61,6 +61,7 @@ export default class extends Controller {
   }
 
   handleSuccess(data) {
+    console.log(data)
     // toastr.success("Nice job sorting tasks", "Success");
   }
 
