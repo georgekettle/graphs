@@ -48,6 +48,7 @@ export default class extends Controller {
   }
 
   handleError(data) {
+    console.log(data);
     toastr.error("Sorting tasks failed", "Oopsie Diasy"); // toast notification
     const originalPosition = parseInt(data.original_position, 10) - 1;
     const userTaskId = data.item.id;
@@ -65,6 +66,7 @@ export default class extends Controller {
   }
 
   sendRequest(url, newPosition) {
+    console.log(newPosition);
     var sortableController = this;
     Rails.ajax({
       type: "patch",

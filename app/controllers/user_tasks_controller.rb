@@ -40,7 +40,7 @@ class UserTasksController < ApplicationController
 
   def change_user_position
     resort_user_tasks_on_date
-    if params[:position] && @user_task.insert_at(params[:position].to_i)
+    if update_position
       respond_to do |format|
         format.json { render json: @user_task }
       end
@@ -61,6 +61,11 @@ class UserTasksController < ApplicationController
   end
 
   private
+
+  def update_position
+    return true if params[:position] && @user_task.user_position == params[:position].to_i
+    return true if params[:position] && @user_task.insert_at(params[:position].to_i)
+  end
 
   def resort_user_tasks_on_date
     date = @user_task.task.start_date
