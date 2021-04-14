@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   createOption(option) {
-    var confirmation = (option.confirm_message && option.confirm_message.length) > 0 ? `data-confirm=${option.confirm_message}` : null;
+    var confirmation = (option.confirm_message && option.confirm_message.length) > 0 ? `data-confirm="${option.confirm_message}"` : null;
     var method = option.method ? `data-method=${option.method}` : null;
     var deleteClasses = (option.method === 'delete') ? 'text-red-500' : '';
     return `<a href=${option.url} ${method} ${confirmation} class="w-full p-4 bg-white text-center block border-t ${deleteClasses}">${option.text}</a>`
