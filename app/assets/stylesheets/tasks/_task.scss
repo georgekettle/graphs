@@ -94,14 +94,14 @@
 
 .task-container.complete {
   .checkbox {
-    background: $success-green;
-    border-color: $success-green;
+    background: $success-green-light;
+    border-color: $success-green-light;
     box-shadow: none!important;
 
     svg {
       opacity: 1;
       stroke-width: 3px;
-      stroke: $white;
+      stroke: $success-green-dark;
     }
   }
 }
@@ -119,4 +119,8 @@
   .checkbox, .extra-info {
     opacity: 0;
   }
+}
+
+.draggable--original {
+  z-index: 1000
 }

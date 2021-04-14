@@ -1,0 +1,27 @@
+.modal {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+
+  .modal-content {
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

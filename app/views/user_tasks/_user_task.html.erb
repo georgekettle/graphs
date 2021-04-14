@@ -9,15 +9,14 @@
       data-task-toggle-url-value="<%= toggle_task_url(task) %>">
   <div class="task shadow-sm drag-handle" id="task-<%= task.id %>">
     <h5 class="task-name"><%= task.name %></h5>
-    <!-- <div class="drag-handle">
-      <%# render 'icons/grip_vertical' %>
-    </div> -->
   </div>
   <div class="extra-info">
     <%= link_to members_task_path(task) do %>
-      <%= render "components/avatars/avatar_stack", profiles: user_task.task_team, size: "small" %>
+      <%= render 'user_tasks/options/user_options', user_task: user_task %>
     <% end %>
-    <%= render "task_lists/badge", task_list: user_task.task_list %>
+    <%= link_to select_task_list_user_task_path(user_task) do %>
+      <%= render 'user_tasks/options/task_list_options', user_task: user_task %>
+    <% end %>
   </div>
   <%= link_to toggle_task_path(task), class: "checkbox", data: {action:"click->task#toggle"}, method: 'patch', remote: true do %>
     <%= render 'icons/check' %>

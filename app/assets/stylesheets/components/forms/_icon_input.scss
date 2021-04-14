@@ -17,8 +17,15 @@
     flex-grow: 1;
     border: none;
     outline: none;
+    margin: 0px;
     margin-left: 5px;
+    padding: 5px;
     background: transparent;
+    box-shadow: none;
+  }
+
+  input:focus, input:active {
+    box-shadow: none!important;
   }
 }
 

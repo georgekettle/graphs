@@ -5,9 +5,9 @@
   </head>
 
   <body>
-    <%= render('shared/navbar') if user_signed_in? %>
-    <div class="body">
+    <div class="body" style="padding-bottom: 120px">
       <%= yield %>
     </div>
+    <%= render('shared/navbar') if user_signed_in? %>
   </body>
 </html>

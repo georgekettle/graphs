@@ -32,11 +32,13 @@ import "stylesheets/application";
 import { initCalendar, initCalendarStrip } from '../components/calendar'
 import { initToastNotifications } from '../components/toast_notifications'
 import { initLoaders } from '../components/loaders'
+import { initFlatpickr } from '../components/flatpickr'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initLoaders();
   initToastNotifications();
+  initFlatpickr();
   initCalendar();
   initCalendarStrip();
 });

@@ -1,0 +1,22 @@
+<%= render "components/header", header: "Choose bucket" %>
+
+<%= simple_form_for @user_task do |f| %>
+  <% current_user.task_lists.each do |tl| %>
+    <%= f.radio_button :task_list_id, tl.id, class: 'display-none', data: { controller: 'ajax-radio', ajax_radio_target: 'radio', action: 'click->ajax-radio#updateSelected', ajax_radio_url_value: "#{user_task_path(@user_task)}" } %>
+    <%= f.label(:task_list_id, label: tl.name, for: "user_task_task_list_id_#{tl.id}") do %>
+      <% if tl.default? %>
+        <%= render 'components/list_item',
+          image: render('task_lists/badge', task_list: tl, badge_classes: 'w-10 h-10 mr-2', emoji_classes: 'text-lg'),
+          title: 'None',
+          options: ["<div class='checkbox'>#{render('icons/check')}</div>"]
+        %>
+      <% else %>
+        <%= render 'components/list_item',
+          image: render('task_lists/badge', task_list: tl, badge_classes: 'w-10 h-10 mr-2', emoji_classes: 'text-lg'),
+          title: tl.name,
+          options: ["<div class='checkbox'>#{render('icons/check')}</div>"]
+        %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

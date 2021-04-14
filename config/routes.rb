@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     end
     resources :user_tasks, only: [ :new, :create ]
   end
-  resources :user_tasks, only: [ :show, :destroy ] do
+  resources :user_tasks, only: [ :show, :destroy, :update ] do
     member do
       patch '/user_position', to: 'user_tasks#change_user_position', as: 'user_position'
+      get :select_task_list
     end
   end
   resources :profiles, only: [:show, :edit, :update] do

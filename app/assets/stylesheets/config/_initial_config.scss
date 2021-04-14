@@ -17,22 +17,21 @@ h3, h4 {
 h5, h6 {
   font-weight: 400;
   margin: 0px;
-  font-family: $font-condensed;
+  font-family: $font;
   color: $black80;
 }
 
 p {
   font-weight: 300;
   margin: 0px;
-  font-family: $font-condensed;
+  font-family: $font;
   color: $black80;
-}
-
-h6 {
-  color: $black50;
-  font-size: 0.9rem;
 }
 
 .display-none {
   display: none!important;
+}
+
+:focus, :active, :hover {
+  outline: none;
 }

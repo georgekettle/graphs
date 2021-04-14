@@ -1,7 +1,8 @@
 class UserTasksController < ApplicationController
-  before_action :set_user_task, only: [ :change_user_position, :show ]
+  layout "no_navbar", :only => [ :new, :select_task_list ]
+
+  before_action :set_user_task, only: [ :change_user_position, :select_task_list, :update, :show, :destroy ]
   before_action :set_task, only: [ :new, :create ]
-  layout "no_navbar", :only => [ :new ]
 
   def new
     @user_task = UserTask.new
@@ -15,7 +16,7 @@ class UserTasksController < ApplicationController
       @profiles.each do |profile|
         UserTask.create!(user: profile.user, task: @task, task_list: profile.default_task_list) unless UserTask.find_by(user: profile.user, task: @task)
       end
-      redirect_to user_task_path(@user_task)
+      redirect_to members_task_url(@user_task.task)
     rescue
       @user_task = UserTask.new
       render 'new'
@@ -23,7 +24,18 @@ class UserTasksController < ApplicationController
   end
 
   def show
+  end
 
+  def destroy
+    @user_task.destroy
+    redirect_back(fallback_location: members_task_url(@user_task.task))
+  end
+
+  def update
+    @user_task.update(user_task_params)
+    respond_to do |format|
+      format.json { render json: @user_task }
+    end
   end
 
   def change_user_position
@@ -44,6 +56,9 @@ class UserTasksController < ApplicationController
     end
   end
 
+  def select_task_list
+  end
+
   private
 
   def set_profiles
@@ -58,5 +73,9 @@ class UserTasksController < ApplicationController
 
   def set_user_task
     @user_task = UserTask.find(params[:id])
+  end
+
+  def user_task_params
+    params.require(:user_task).permit(:task_list_id)
   end
 end
