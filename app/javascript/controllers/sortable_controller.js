@@ -27,8 +27,14 @@ export default class extends Controller {
       },
       classes: {
         'draggable:over': ['draggable-over'],
+        'drag:start': ['dragging'],
       },
-      handle: '.sortable-child .drag-handle'
+      handle: '.sortable-child .drag-handle',
+      delay: {
+        mouse: 100,
+        drag: 100,
+        touch: 100,
+      }
     });
     // handle when sortable event finished --> send request to update instance
     this.sortable.on('sortable:stop', (e) => sortableController.updateSortableOrder(e));
@@ -55,6 +61,7 @@ export default class extends Controller {
   }
 
   handleSuccess(data) {
+    console.log(data)
     // toastr.success("Nice job sorting tasks", "Success");
   }
 

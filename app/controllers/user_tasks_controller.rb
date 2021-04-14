@@ -39,6 +39,10 @@ class UserTasksController < ApplicationController
   end
 
   def change_user_position
+    date = @user_task.task.start_date
+    current_user.user_tasks_on_date(date).reverse.each do |user_task|
+      user_task.move_to_top
+    end
     if params[:position] && @user_task.insert_at(params[:position].to_i)
       respond_to do |format|
         format.json { render json: @user_task }
