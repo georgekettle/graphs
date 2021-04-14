@@ -7,4 +7,8 @@ class TaskList < ApplicationRecord
   def bg_color
     "#{self.color}26"
   end
+
+  def default?
+    self.name == 'default'
+  end
 end

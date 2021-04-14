@@ -20,18 +20,7 @@
     }
 
     h4 {
-      font-size: 1rem;
       text-decoration: none;
-    }
-  }
-
-  &:hover {
-    // border: 1px solid white;
-    background: white;
-    box-shadow: $shadow;
-
-    .avatar {
-      box-shadow: none;
     }
   }
 }

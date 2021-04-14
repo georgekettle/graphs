@@ -15,7 +15,7 @@
   }
 }
 
-.selected {
+.selected, input[type="radio"]:checked+label {
   .checkbox {
     background: $black80;
     border: 1px solid $black80;

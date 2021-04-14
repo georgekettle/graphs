@@ -1,0 +1,6 @@
+<%= render 'components/header', header: 'New task' %>
+<%= simple_form_for @task do |f| %>
+  <%= f.input :name, label: false, placeholder: 'Name of task' %>
+  <%= f.input :start_date, :as => :string, :input_html => { id: 'flatpickr-date' }, label: false, placeholder: 'Pick a date' %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

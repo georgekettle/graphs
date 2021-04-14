@@ -1,0 +1,5 @@
+<% if user_task.task_list.name == 'default' %>
+  <%= render 'user_tasks/icon_button', icon: 'bucket' %>
+<% else %>
+  <%= render "task_lists/badge", task_list: user_task.task_list %>
+<% end %>

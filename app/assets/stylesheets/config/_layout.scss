@@ -1,6 +1,15 @@
+$sm: 480px;
+$md: 768px;
+$lg: 976px;
+$xl: 1440px;
+
 .body {
-  max-width: 400px;
   margin: 0px auto;
   padding: 30px 15px;
   padding-top: 15px;
+
+  @media screen and (min-width: $sm) {
+      //do Smth
+      max-width: 400px;
+  }
 }

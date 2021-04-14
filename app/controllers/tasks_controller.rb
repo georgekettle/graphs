@@ -6,6 +6,16 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def create
+    @task = Task.new(task_params)
+    @user_task = UserTask.create!(task: @task, user: current_user, task_list: current_user.default_task_list)
+    if @task.save
+      redirect_to tasks_url
+    else
+      render :new
+    end
+  end
+
   def index
     @date = set_date
     @user_tasks = current_user.user_tasks_on_date(@date)
@@ -27,7 +37,8 @@ class TasksController < ApplicationController
   end
 
   def members
-    @profiles = @task.profiles
+    @user_tasks = @task.user_tasks
+    # @profiles = @task.profiles
   end
 
   private
@@ -42,6 +53,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:completed, :name)
+    params.require(:task).permit(:completed, :name, :start_date)
   end
 end

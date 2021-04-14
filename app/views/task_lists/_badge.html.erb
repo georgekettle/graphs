@@ -1,3 +1,10 @@
-<div class="task-list-badge">
-  <h4><%= task_list.emoji %></h4>
-</div>
+<% badge_classes ||= "" %>
+<% emoji_classes ||= "" %>
+
+<% if task_list.default? %>
+  <div class="w-6 h-6 rounded-full flex justify-center items-center bg-gray-100 <%= badge_classes %>"></div>
+<% else %>
+  <div class="w-6 h-6 rounded-full flex justify-center items-center <%= badge_classes %>" style="background: <%= task_list.color %>">
+    <h4 class="text-xs text-center <%= emoji_classes %>"><%= task_list.emoji %></h4>
+  </div>
+<% end %>

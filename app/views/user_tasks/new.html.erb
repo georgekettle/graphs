@@ -1,4 +1,4 @@
-<%= render "components/header", header: "Choose people" %>
+<%= render "components/header", header: "Choose people", back_link: members_task_path(@task) %>
 
 <div class="search-container" data-controller="user-select" data-user-select-url-value='<%= select_search_profiles_url %>'>
   <%= render "components/forms/icon_input",

@@ -18,6 +18,10 @@ class User < ApplicationRecord
       .where(tasks: { start_date: date })
   end
 
+  def default_task_list
+    self.task_lists.find_by(name: 'default')
+  end
+
   private
 
   def set_default_task_list

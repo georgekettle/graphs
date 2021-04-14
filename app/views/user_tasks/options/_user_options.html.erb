@@ -1,0 +1,5 @@
+<% if user_task.task_team.length >= 1 %>
+  <%= render "components/avatars/avatar_stack", profiles: user_task.task_team, size: "small" %>
+<% else %>
+  <%= render 'user_tasks/icon_button', icon: 'user' %>
+<% end %>
