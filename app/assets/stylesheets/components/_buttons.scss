@@ -1,6 +1,6 @@
 .icon-btn {
   background: white;
-  transition: $transition-short;
+  transition: $transition-short background;
   border-radius: 20px;
   height: 40px;
   width: 40px;
@@ -14,6 +14,7 @@
     height: 24px;
     stroke-width: 2px;
     stroke: $primary;
+    transition: width $transition-short, height $transition-short;
   }
 
   &:hover {
