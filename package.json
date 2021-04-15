@@ -24,7 +24,8 @@
     "stimulus": "^2.0.0",
     "tailwindcss": "^2.0.4",
     "toastr": "^2.1.4",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "turbolinks-animate": "^3.2.1"
   },
   "version": "0.1.0",
   "devDependencies": {

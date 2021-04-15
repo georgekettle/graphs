@@ -20,7 +20,7 @@ module.exports = {
         bg: '#fff4df',
         light: '#ffd6c3',
         DEFAULT: '#ff660a',
-        dark: '#b95011',
+        dark: '#ef600b',
       },
       secondary: {
         bg: '#fbf8f5',
