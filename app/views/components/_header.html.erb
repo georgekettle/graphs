@@ -12,7 +12,7 @@
   </div>
 
   <% unless left %>
-    <%= link_to back_link, class: 'icon-btn bg-transparent' do %>
+    <%= link_to back_link, class: 'icon-btn bg-transparent', data: {turbolinks_animate_animation:"fadeOutRightBig", turbolinks_animate_appear: "fadeInRightBig"} do %>
       <%= render 'icons/arrow_left' %>
     <% end %>
   <% else %>

@@ -1,5 +1,6 @@
 <% classes ||= '' %>
+<% data ||= '' %>
 
-<%= link_to link, class: "icon-btn #{classes}" do %>
+<%= link_to link, class: "icon-btn #{classes}", data: data do %>
   <%= render "icons/#{icon}" %>
 <% end %>

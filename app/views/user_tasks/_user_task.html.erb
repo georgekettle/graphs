@@ -11,7 +11,7 @@
     <h5 class="task-name"><%= task.name %></h5>
   </div>
   <div class="extra-info">
-    <%= link_to members_task_path(task) do %>
+    <%= link_to members_task_path(task), data: {turbolinks_animate_appear: 'fadeInRightBig', turbolinks_animate_animation:"fadeout", turbolinks_animate_duration:"2s", turbolinks_animate_delay:"1000"} do %>
       <%= render 'user_tasks/options/user_options', user_task: user_task %>
     <% end %>
     <%= link_to select_task_list_user_task_path(user_task) do %>

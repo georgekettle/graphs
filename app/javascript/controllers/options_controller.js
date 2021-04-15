@@ -24,7 +24,7 @@ export default class extends Controller {
   }
 
   createModal() {
-    var modal = `<div class="modal active" id="close-modal" data-controller="modal" data-modal-target="modal" data-action="click->modal#destroyModal"><div class="modal-content"><div id="options" class="mb-2 w-full br-2 rounded-xl overflow-hidden"><div class="w-full p-2 px-4 bg-white"><h6 class="text-xs text-center text-gray-400">${this.headerValue}</h6></div>${this.insertOptions()}</div><button id="close-modal" class="bg-white hover:bg-white text-gray-400 hover:text-gray-900 w-full" data-action="click->modal#destroyModal">Cancel</button></div></div>`;
+    var modal = `<div class="modal active animated fadeIn" style="animation-duration: 0.2s;" id="close-modal" data-controller="modal" data-modal-target="modal" data-action="click->modal#destroyModal"><div class="modal-content animated slideInUp" style="animation-duration: 0.25s;"><div id="options" class="mb-2 w-full br-2 rounded-xl overflow-hidden"><div class="w-full p-2 px-4 bg-white"><h6 class="text-xs text-center text-gray-400">${this.headerValue}</h6></div>${this.insertOptions()}</div><button id="close-modal" class="bg-white hover:bg-white text-gray-400 hover:text-gray-900 w-full" data-action="click->modal#destroyModal">Cancel</button></div></div>`;
 
     document.body.insertAdjacentHTML('beforeEnd', modal);
   }

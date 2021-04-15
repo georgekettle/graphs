@@ -1,5 +1,8 @@
 body {
   background: white;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-shadow: $shadow-left;
 }
 
 h1, h2 {
