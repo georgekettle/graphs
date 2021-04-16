@@ -1,0 +1,3 @@
+<%= link_to toggle_priority_user_task_path(user_task), class: "priority", data: {action:"click->user-task#togglePriority"}, method: 'patch', remote: true do %>
+  <%= render "icons/star", classes: "h-4 w-4" %>
+<% end %>

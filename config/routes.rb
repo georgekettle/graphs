@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :user_tasks, only: [ :show, :destroy, :update ] do
     member do
       patch '/user_position', to: 'user_tasks#change_user_position', as: 'user_position'
+      patch :toggle_priority
       get :select_task_list
     end
   end
