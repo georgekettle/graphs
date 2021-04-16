@@ -31,9 +31,9 @@ export default class extends Controller {
       },
       handle: '.sortable-child .drag-handle',
       delay: {
-        mouse: 100,
-        drag: 100,
-        touch: 100,
+        mouse: 300,
+        drag: 300,
+        touch: 400,
       }
     });
     // handle when sortable event finished --> send request to update instance

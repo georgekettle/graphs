@@ -1,7 +1,7 @@
 class UserTasksController < ApplicationController
   layout "no_navbar", :only => [ :new, :select_task_list ]
 
-  before_action :set_user_task, only: [ :change_user_position, :select_task_list, :update, :show, :destroy ]
+  before_action :set_user_task, only: [ :change_user_position, :select_task_list, :update, :show, :destroy, :toggle_priority ]
   before_action :set_task, only: [ :new, :create ]
 
   def new
@@ -32,9 +32,19 @@ class UserTasksController < ApplicationController
   end
 
   def update
-    @user_task.update(user_task_params)
-    respond_to do |format|
-      format.json { render json: @user_task }
+    if @user_task.update(user_task_params)
+      respond_to do |format|
+        format.json { render json: @user_task }
+      end
+    end
+  end
+
+  def toggle_priority
+    @user_task.priority = !@user_task.priority
+    if @user_task.save
+      respond_to do |format|
+        format.json { render json: @user_task }
+      end
     end
   end
 

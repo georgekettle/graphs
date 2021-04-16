@@ -50,8 +50,8 @@
     padding: 10px;
     padding-left: 45px;
     padding-top: 13px;
-    padding-bottom: 40px;
-    border-radius: 10px;
+    padding-bottom: 50px;
+    border-radius: 15px;
     border: 1px solid $black5;
     cursor: pointer;
     position: relative;
@@ -101,7 +101,35 @@
     }
   }
 
-  .checkbox, .extra-info {
+  .checkbox, .extra-info, .priority {
     opacity: 0;
+  }
+}
+
+.priority {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  padding: 4px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: transparent;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+   stroke: $black20;
+   fill: $black5;
+  }
+}
+
+[data-user-task-priority-value="true"] {
+  .priority {
+    svg {
+     stroke: $info-yellow;
+     fill: $info-yellow;
+    }
   }
 }
