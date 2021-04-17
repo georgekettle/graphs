@@ -7,6 +7,8 @@
   padding-bottom: 5px;
   outline: none;
   position: relative;
+  width: 100%;
+  display: block;
 
   .checkbox {
     height: 30px;
@@ -125,7 +127,7 @@
   }
 }
 
-[data-user-task-priority-value="true"] {
+.prioritised {
   .priority {
     svg {
      stroke: $info-yellow;

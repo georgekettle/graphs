@@ -1,7 +1,35 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 1rem;
+    display: inline;
+    width: 1rem;
+    margin-right: 0.3rem;
+    margin-bottom: 1px;
+  }
+
+  span#active {
+    display: none;
+  }
+}
+
+button.active {
+  span {
+    display: none;
+  }
+
+  span#active {
+    display: inline;
+  }
+}
+
 .icon-btn {
-  background: white;
+  background: $black5;
   transition: $transition-short background;
-  border-radius: 20px;
+  border-radius: 10px;
   height: 40px;
   width: 40px;
   display: inline-flex;
@@ -10,20 +38,12 @@
   cursor: pointer;
 
   svg {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2px;
-    stroke: $primary;
-    transition: width $transition-short, height $transition-short;
-  }
-
-  &:hover {
-    background: $primary-light;
-
-    svg {
-      width: 26px;
-      height: 26px;
-    }
+    width: 18px;
+    height: 18px;
+    stroke-width: 3px;
+    stroke: $black30;
+    fill: $black30;
+    transition: stroke $transition-short, fill $transition-short;
   }
 }
 
@@ -32,20 +52,6 @@
 
   svg {
     stroke: white;
-  }
-}
-
-.icon-btn.flat-grey {
-  background: $black5;
-  box-shadow: 0px 3px 8px -3px rgba(0, 0, 0, 0);
-
-  svg {
-    stroke: $black80;
-  }
-
-  &:hover {
-    background: $black10;
-    box-shadow: 0px 3px 8px -3px rgba(0, 0, 0, 0);
   }
 }
 
@@ -60,5 +66,14 @@
   &:hover {
     background: $black10;
     box-shadow: none;
+  }
+}
+
+.icon-btn.active {
+  background: $primary-light;
+
+  svg {
+    stroke: $primary;
+    fill: $primary;
   }
 }

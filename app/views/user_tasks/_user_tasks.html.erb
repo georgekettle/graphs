@@ -1,4 +1,4 @@
-<div id="tasks" data-controller="sortable" data-sortable-target="parent">
+<div id="tasks" data-controller="sortable filter" data-sortable-target="parent" data-filter-target="parent" data-filter-filters-value=[]>
   <% user_tasks.each do |user_task| %>
     <%= render 'user_tasks/user_task', user_task: user_task %>
   <% end %>
