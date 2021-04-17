@@ -2,14 +2,6 @@ import { Controller } from "stimulus"
 import Rails from "@rails/ujs";
 import { Sortable } from '@shopify/draggable';
 import toastr from "toastr";
-// Or
-// import Sortable from '@shopify/draggable/lib/sortable';
-
-// const sortable = new Sortable(document.querySelectorAll('ul'), {
-//   draggable: 'li'
-// });
-
-
 
 export default class extends Controller {
   static targets = [ "parent", "child" ]
@@ -31,9 +23,9 @@ export default class extends Controller {
       },
       handle: '.sortable-child .drag-handle',
       delay: {
-        mouse: 300,
-        drag: 300,
-        touch: 400,
+        mouse: 0,
+        drag: 0,
+        touch: 100,
       }
     });
     // handle when sortable event finished --> send request to update instance
@@ -66,7 +58,6 @@ export default class extends Controller {
   }
 
   sendRequest(url, newPosition) {
-    console.log(newPosition);
     var sortableController = this;
     Rails.ajax({
       type: "patch",

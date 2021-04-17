@@ -37,7 +37,6 @@ import { initTurbolinksAnimate } from '../components/turbolinks_animate'
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initTurbolinksAnimate();
-  // TurbolinksAnimate.init({animation: 'fadeinright', duration: '1s', delay: 1000});
   initLoaders();
   initToastNotifications();
   initFlatpickr();

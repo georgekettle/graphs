@@ -1,13 +1,13 @@
 <% task = user_task.task %>
-<div class="task-container sortable-child <%= "complete" if task.completed %>"
+<div class="task-container sortable-child <%= "complete" if task.completed %> <%= "incomplete" unless task.completed %> <%= "prioritised" if user_task.priority %>"
       id="user-task-<%= user_task.id %>"
       data-sortable-id="<%= user_task.id %>"
       data-sortable-target="child"
       data-sortable-url="<%= user_position_user_task_url(user_task) %>"
       data-controller="task user-task"
       data-task-target="task"
-      data-user-task-target="user-task"
-      data-user-task-priority-value="<%= user_task.priority %>"
+      data-filter-target="child"
+      data-user-task-target="task"
       data-user-task-url-value="<%= toggle_priority_user_task_url(user_task) %>"
       data-task-toggle-url-value="<%= toggle_task_url(task) %>">
   <div class="task shadow-sm drag-handle" id="task-<%= task.id %>">

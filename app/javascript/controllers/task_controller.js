@@ -13,8 +13,10 @@ export default class extends Controller {
   updateTask(task) {
     if (task.completed) {
       this.taskTarget.classList.add('complete');
+      this.taskTarget.classList.remove('incomplete');
     } else {
       this.taskTarget.classList.remove('complete');
+      this.taskTarget.classList.add('incomplete');
     }
   }
 
