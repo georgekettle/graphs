@@ -40,10 +40,14 @@ button.active {
   svg {
     width: 18px;
     height: 18px;
-    stroke-width: 3px;
+    stroke-width: 2px;
     stroke: $black30;
-    fill: $black30;
+    fill: transparent;
     transition: stroke $transition-short, fill $transition-short;
+  }
+
+  .icon-tabler-plus {
+    stroke-width: 2.5px;
   }
 }
 
@@ -74,6 +78,5 @@ button.active {
 
   svg {
     stroke: $primary;
-    fill: $primary;
   }
 }
