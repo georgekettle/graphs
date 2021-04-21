@@ -40,7 +40,7 @@
 
 @keyframes fadeOutShrink {
   from {
-    max-height: 200px;
+    max-height: 150px;
     transform: scale(1);
     opacity: 1;
     overflow: hidden;
@@ -52,6 +52,7 @@
     opacity: 0;
     overflow: hidden;
     padding: 0px;
+    display: none;
   }
 }
 

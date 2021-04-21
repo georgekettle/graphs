@@ -1,14 +1,14 @@
 <%# render 'components/calendar' %>
 <div data-turbolinks-animate-persist="true">
   <%= render 'components/calendar_strip' %>
-  <div class="header-and-filters">
+  <div data-controller="dropdown" data-dropdown-open-class="fadeInExpand" data-dropdown-close-class="fadeOutShrink">
     <%= render 'components/section_header',
           title: 'Tasks',
           buttons: [
-            render('components/icon_button', link:"#", icon:'bucket', classes:'icon-btn'),
+            render('components/icon_button', link:"#", icon:'bucket', classes:'icon-btn', data: { dropdown_target:"toggle", action:'click->dropdown#toggleDropdown' }),
             render('components/icon_button', link:"#", icon:'star', classes:'icon-btn', data: { filter: '.prioritised' }),
             render('components/icon_button', link:new_task_path, data: {turbolinks_animate_animation:"fadeOutLeftBig" }, icon:'plus', classes:'icon-btn-primary')] %>
-    <div class="flex align-center overflow-x-scroll w-full">
+    <div class="flex align-center overflow-x-scroll w-full opacity-0 max-h-0" data-dropdown-target="container">
       <% current_user.task_lists.each do |tl| %>
         <div class="bucket-filter" data-inclusive-filter=".task-list-<%= tl.id %>">
           <div class="emoji"><%= tl.emoji %></div>
