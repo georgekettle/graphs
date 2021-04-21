@@ -5,12 +5,12 @@
 
 @keyframes fadeIn {
   from {
-    transform: scale(0.99);
+    // transform: scale(0.99);
     opacity: 0;
   }
 
   to {
-    transform: scale(1);
+    // transform: scale(1);
     opacity: 1;
   }
 }
@@ -23,12 +23,12 @@
 
 @keyframes fadeOut {
   from {
-    transform: scale(1);
+    // transform: scale(1);
     opacity: 1;
   }
 
   to {
-    transform: scale(0.95);
+    // transform: scale(0.95);
     opacity: 0;
   }
 }
