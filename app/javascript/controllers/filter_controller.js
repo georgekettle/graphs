@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = [ "parent", "child" ]
   static values = {
     filters: Array,
+    inclusiveFilters: Array,
   }
 
   connect() {
@@ -11,7 +12,7 @@ export default class extends Controller {
   }
 
   initButtons() {
-    console.log('initButtons');
+    // this could be simplified
     const filterButtons = document.querySelectorAll('[data-filter]');
     filterButtons.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -21,13 +22,26 @@ export default class extends Controller {
         btn.classList.toggle('active');
       })
     })
+
+    const inclusiveFilterButtons = document.querySelectorAll('[data-inclusive-filter]');
+    inclusiveFilterButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let filter = btn.dataset.inclusiveFilter;
+        this.toggleInclusiveFilter(filter);
+        btn.classList.toggle('active');
+      })
+    })
   }
 
   toggleFilter(value) {
     this.filtersValue = this.filtersValue.includes(value) ? this.filtersValue.filter(i => i !== value) : [ ...this.filtersValue, value ];
     this.applyFilters();
-    // console.log('clicked button');
-    // console.log(btn);
+  }
+
+  toggleInclusiveFilter(value) {
+    this.inclusiveFiltersValue = this.inclusiveFiltersValue.includes(value) ? this.inclusiveFiltersValue.filter(i => i !== value) : [ ...this.inclusiveFiltersValue, value ];
+    this.applyFilters();
   }
 
   hideElements(elems) {
@@ -48,27 +62,27 @@ export default class extends Controller {
 
   applyFilters() {
     const filterClasses = this.filtersValue.length ? this.filtersValue.join('') : '*';
-    let deselected = this.parentTarget.querySelectorAll(':scope > div:not(' + filterClasses + ')');
-    this.hideElements(deselected);
-    let selected = this.parentTarget.querySelectorAll(`:scope > ${filterClasses}`);
-    this.showElements(selected);
+    const selectFilterClasses = this.inclusiveFiltersValue.length ? this.inclusiveFiltersValue.map(inclusiveFilter => `:scope > ${filterClasses}${inclusiveFilter}`).join(',') : filterClasses;
+    const deselectFilterClasses = this.inclusiveFiltersValue.length ? this.inclusiveFiltersValue.map(inclusiveFilter => `:scope > div:not(${filterClasses}${inclusiveFilter})`).join(',') : `:scope > div:not(${filterClasses})`;
 
-    console.log('applyFilters');
-    // apply all filters in this.filtersValue
+    if (deselectFilterClasses.length) {
+      let deselected = this.parentTarget.querySelectorAll(deselectFilterClasses);
+      this.hideElements(deselected);
+    }
+
+    if (selectFilterClasses.length) {
+      let selected = this.parentTarget.querySelectorAll(selectFilterClasses);
+      this.showElements(selected);
+    }
   }
 
   applyFilter(e) {
     e.preventDefault();
-    // console.log('executeShuffle');
-    // this.executeShuffle();
-    // this.buttonTarget.classList.add(this.activeClass);
     this.buttonTarget.dataset.action = 'click->filter#removeFilter';
   }
 
   removeFilter(e) {
     e.preventDefault();
-    // this.resetShuffle();
-    // this.buttonTarget.classList.remove(this.activeClass);
     this.buttonTarget.dataset.action = 'click->filter#applyFilter';
   }
 }

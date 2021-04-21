@@ -1,5 +1,5 @@
 <% task = user_task.task %>
-<div class="task-container sortable-child <%= "complete" if task.completed %> <%= "incomplete" unless task.completed %> <%= "prioritised" if user_task.priority %>"
+<div class="task-container sortable-child task-list-<%= user_task.task_list.id %> <%= "complete" if task.completed %> <%= "incomplete" unless task.completed %> <%= "prioritised" if user_task.priority %>"
       id="user-task-<%= user_task.id %>"
       data-sortable-id="<%= user_task.id %>"
       data-sortable-target="child"

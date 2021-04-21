@@ -1,8 +1,3 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -26,16 +21,20 @@ require("channels")
 // Tailwind
 import "stylesheets/application";
 
-
 // Internal imports, e.g:
+import { removeLoadingScreen } from '../config/initial_load'
 import { initCalendar, initCalendarStrip } from '../components/calendar'
 import { initToastNotifications } from '../components/toast_notifications'
 import { initLoaders } from '../components/loaders'
 import { initFlatpickr } from '../components/flatpickr'
 import { initTurbolinksAnimate } from '../components/turbolinks_animate'
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
+document.addEventListener('turbolinks:load', (e) => {
+  // initial load only
+  if (!event.data.timing.visitStart) {
+    removeLoadingScreen()
+  }
+
   initTurbolinksAnimate();
   initLoaders();
   initToastNotifications();

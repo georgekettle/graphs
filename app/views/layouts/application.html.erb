@@ -9,5 +9,6 @@
       <%= yield %>
     </div>
     <%= render('shared/navbar') if user_signed_in? %>
+    <%= render 'shared/loading_screen' %>
   </body>
 </html>

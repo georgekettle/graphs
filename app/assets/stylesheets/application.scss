@@ -1,28 +1,3 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/transitions";
-@import "config/shadows";
-@import "config/spacers";
-
-// External libraries
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import '@fullcalendar/common/main.css';
-@import '@fullcalendar/daygrid/main.css';
-
-@import "config/initial_config";
-@import "config/layout";
-@import "config/forms";
-
-// Your CSS partials
-@import "components/index";
-@import "pages/index";
-@import "task-lists/index";
-@import "tasks/index";
-@import "calendar/index";
-@import "dashboard/index";
-@import "profiles/index";
-
-// animations
-@import "config/animations";
+// All styles located in app/javascript/stylesheets/applications.scss
+// This is to enable flexible integration with tailwind
+@import "./fonts";

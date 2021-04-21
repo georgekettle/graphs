@@ -1,5 +1,34 @@
+// Graphical variables
+@import "./config/fonts";
+@import "./config/colors";
+@import "./config/transitions";
+@import "./config/shadows";
+@import "./config/spacers";
+
+// Tailwind
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
+
+// External libraries
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+@import '@fullcalendar/common/main.css';
+@import '@fullcalendar/daygrid/main.css';
+
+@import "./config/initial_config";
+@import "./config/layout";
+@import "./config/forms";
+
+// Your CSS partials
+@import "./components/index";
+@import "./pages/index";
+@import "./task-lists/index";
+@import "./tasks/index";
+@import "./calendar/index";
+@import "./dashboard/index";
+@import "./profiles/index";
+
+// animations
+@import "./config/animations";
