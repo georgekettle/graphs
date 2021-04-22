@@ -43,14 +43,14 @@
     max-height: 150px;
     transform: scale(1);
     opacity: 1;
-    overflow: hidden;
+    overflow: scroll;
   }
 
   to {
     max-height: 0px;
     transform: scale(0);
     opacity: 0;
-    overflow: hidden;
+    overflow: scroll;
     padding: 0px;
     display: none;
   }
@@ -66,14 +66,14 @@
     max-height: 0px;
     transform: scale(0);
     opacity: 0;
-    overflow: hidden;
+    overflow: scroll;
   }
 
   to {
     max-height: 200px;
     transform: scale(1);
     opacity: 1;
-    overflow: hidden;
+    overflow: scroll;
   }
 }
 
