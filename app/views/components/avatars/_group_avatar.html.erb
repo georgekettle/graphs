@@ -1,0 +1,12 @@
+<% classes ||= "" %>
+<% avatar_count = 4 %>
+
+<div class="flex flex-wrap w-12 h-12">
+  <% profiles.first(avatar_count).each_with_index do |profile, index| %>
+    <div class="w-1/2 h-1/2 p-0.5">
+      <div class="avatar w-full h-full">
+        <%= cl_image_tag(profile.avatar.key) if profile.avatar.attached? %>
+      </div>
+    </div>
+  <% end %>
+</div>

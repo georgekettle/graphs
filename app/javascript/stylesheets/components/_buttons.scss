@@ -1,7 +1,5 @@
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+button, .btn {
+  @apply flex items-center justify-center rounded-lg px-1.5;
 
   svg {
     height: 1rem;
@@ -16,7 +14,7 @@ button {
   }
 }
 
-button.active {
+button.active, .btn.active {
   span {
     display: none;
   }
@@ -30,8 +28,8 @@ button.active {
   background: $black5;
   transition: $transition-short background;
   border-radius: 10px;
-  height: 40px;
-  width: 40px;
+  height: 34px;
+  width: 34px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -51,11 +49,15 @@ button.active {
   }
 }
 
-.icon-btn.icon-btn-primary {
-  background: $primary;
+.icon-btn.icon-btn-primary, .btn.btn-primary {
+  @apply bg-primary text-white;
 
   svg {
     stroke: white;
+  }
+
+  &:hover {
+    @apply bg-primary-dark;
   }
 }
 

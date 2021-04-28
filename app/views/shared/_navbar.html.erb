@@ -1,14 +1,14 @@
 <div class="navbar-container flex items-center justify-center" data-turbolinks-animate-persist="true">
   <div class="navbar navbar-expand-sm navbar-light flex items-center justify-between">
-    <%= link_to dashboard_path, class: 'navbar-link' do %>
+    <%# link_to tasks_path, class: 'navbar-link' do %>
+      <%# render 'icons/task_list' %>
+    <%# end %>
+    <%= link_to groups_path, class: 'navbar-link' do %>
       <%= render 'icons/home' %>
     <% end %>
-    <%= link_to tasks_path, class: 'navbar-link' do %>
-      <%= render 'icons/task_list' %>
-    <% end %>
-    <%= link_to dashboard_path, class: 'navbar-link' do %>
-      <%= render 'icons/message' %>
-    <% end %>
+    <%# link_to dashboard_path, class: 'navbar-link' do %>
+      <%# render 'icons/message' %>
+    <%# end %>
     <%= link_to dashboard_path, class: 'navbar-link' do %>
       <%= render 'icons/bell' %>
     <% end %>

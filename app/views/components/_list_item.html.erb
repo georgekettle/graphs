@@ -1,19 +1,31 @@
+<% subtitle ||= nil %>
 <% link ||= nil %>
 <% id ||= "" %>
 <% options ||= [] %>
+<% image ||= nil %>
+<% classes ||= "" %>
 
 <% if link %>
-  <%= link_to link, class: 'list-item', id: id do %>
+  <%= link_to link, class: "list-item #{classes}", id: id do %>
     <div class="left">
-      <%= image.html_safe %>
-      <h4><%= title %></h4>
+      <% if image %>
+        <div class="mr-2">
+          <%= image.html_safe %>
+        </div>
+      <% end %>
+      <div>
+        <h4><%= title %></h4>
+        <% if subtitle %>
+          <h6 class="text-xs text-gray-400 -mt-1"><%= subtitle %></h6>
+        <% end %>
+      </div>
     </div>
     <% options.each do |option| %>
       <%= option.html_safe %>
     <% end %>
   <% end %>
 <% else %>
-  <div class="list-item" id='<%= id %>'>
+  <div class="list-item <%= classes %>" id='<%= id %>'>
     <div class="left">
       <%= image.html_safe %>
       <h4><%= title %></h4>

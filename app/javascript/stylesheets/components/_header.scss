@@ -1,33 +1,21 @@
 .header {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  position: sticky;
-  top: 15px;
-  background: white;
-  padding-bottom: 15px;
+  @apply mb-2 flex items-center justify-between sticky top-3 bg-white pb-3;
 
   .center-content {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @apply absolute w-full flex flex-col items-center;
 
-    h4 {
-      font-size: 0.8rem;
-      margin: 0px;
-      color: $black30;
-      text-transform: capitalize;
-    }
+    // h4 {
+    //   font-size: 0.8rem;
+    //   margin: 0px;
+    //   color: $black30;
+    //   text-transform: capitalize;
+    // }
 
-    h2 {
-      font-weight: 500;
-      font-size: 1.2rem;
-      letter-spacing: -0.5px;
-    }
+    // h2 {
+    //   font-weight: 500;
+    //   font-size: 1.2rem;
+    //   letter-spacing: -0.5px;
+    // }
   }
 
   .icon-btn {

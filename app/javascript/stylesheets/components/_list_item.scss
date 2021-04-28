@@ -1,26 +1,11 @@
 .list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $black1;
-  border: 1px solid $black5;
-  box-shadow: none;
-  padding: 10px;
-  border-radius: 15px;
-  margin-bottom: 5px;
-  text-decoration: none;
-  transition: $transition-short;
+  @apply flex items-center justify-between py-2 no-underline;
 
   .left {
-    display: flex;
-    align-items: center;
-
-    .avatar {
-      margin-right: 10px;
-    }
+    @apply flex items-center;
 
     h4 {
-      text-decoration: none;
+      @apply no-underline;
     }
   }
 }

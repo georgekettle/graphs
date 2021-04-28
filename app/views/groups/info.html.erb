@@ -1,0 +1,9 @@
+<%= render 'components/header', header: @group.name.capitalize, back_link: group_path(@group) %>
+
+<%= render 'components/list_item',
+        link: group_group_members_path(@group),
+        image: render('components/avatars/group_avatar', profiles: @group.profiles, size: "medium"),
+        title: "See members",
+        subtitle: "#{@group.group_members.count} members",
+        options: ["<div class='icon-btn bg-transparent'>#{render('icons/chevron_right')}</div>"],
+        classes: "px-2 bg-gray-50 rounded-xl" %>

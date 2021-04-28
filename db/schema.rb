@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_033544) do
+ActiveRecord::Schema.define(version: 2021_04_22_015517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 2021_04_16_033544) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "group_members", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "group_id", null: false
+    t.integer "role", default: 2, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_members_on_group_id"
+    t.index ["profile_id"], name: "index_group_members_on_profile_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -94,6 +110,8 @@ ActiveRecord::Schema.define(version: 2021_04_16_033544) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "group_members", "groups"
+  add_foreign_key "group_members", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "task_lists", "users"
   add_foreign_key "user_tasks", "task_lists"

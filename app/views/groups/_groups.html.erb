@@ -1,0 +1,10 @@
+<div class="groups">
+  <% groups.each do |group| %>
+
+      <%= render 'components/list_item',
+        link: group_path(group),
+        image: render('components/avatars/group_avatar', profiles: group.profiles, size: "medium"),
+        title: group.name %>
+
+  <% end %>
+</div>
