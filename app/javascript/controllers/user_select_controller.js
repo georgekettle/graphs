@@ -54,6 +54,7 @@ export default class extends Controller {
     } else {
       this.hideSubmit()
     }
+    console.log(this.selected)
   }
 
   deselectResult(e) {
@@ -68,6 +69,7 @@ export default class extends Controller {
     } else {
       this.hideSubmit()
     }
+    console.log(this.selected)
   }
 
   showSubmit() {
@@ -94,6 +96,7 @@ export default class extends Controller {
 
   updateInput() {
     this.inputTarget.value = this.selected;
+    console.log("input:", this.inputTarget.value)
   }
 
   updateSearch(e) {

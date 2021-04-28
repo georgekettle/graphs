@@ -2,13 +2,11 @@
 <% back_link ||= :back %>
 <% right ||= nil %>
 <% subheader ||= nil %>
+<% header_link ||= nil %>
 
 <div class="header">
   <div class="center-content">
-    <% if subheader %>
-      <h4><%= subheader %></h4>
-    <% end %>
-    <h2><%= header.capitalize %></h2>
+    <%= render 'components/header_title', header: header, subheader: subheader, header_link: header_link %>
   </div>
 
   <% unless left %>

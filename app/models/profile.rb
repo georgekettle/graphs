@@ -1,5 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :group_members
+  has_many :groups, through: :group_members
   has_one_attached :avatar
 
   include PgSearch::Model

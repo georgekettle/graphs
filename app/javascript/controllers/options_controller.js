@@ -15,7 +15,6 @@ export default class extends Controller {
   }
 
   insertOptions() {
-    console.log(this.actionsValue);
     let options = '';
     this.actionsValue.forEach((option) => {
       options += this.createOption(option)

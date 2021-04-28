@@ -1,0 +1,1 @@
+<%= render 'components/header', header: @group.name.capitalize, subheader: "#{@group.group_members.count} members", header_link: info_group_path(@group), back_link: groups_path %>

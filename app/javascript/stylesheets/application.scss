@@ -11,6 +11,8 @@
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
 
+@import "./config/icons";
+
 // External libraries
 // @import "font-awesome-sprockets";
 // @import "font-awesome";
@@ -29,6 +31,7 @@
 @import "./calendar/index";
 @import "./dashboard/index";
 @import "./profiles/index";
+@import "./groups/index";
 
 // animations
 @import "./config/animations";

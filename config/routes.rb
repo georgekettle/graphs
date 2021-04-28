@@ -22,5 +22,12 @@ Rails.application.routes.draw do
       get :select_search
     end
   end
+  resources :groups, only: [:show, :new, :create, :index] do
+    member do
+      get :info
+    end
+    resources :group_members, only: [:new, :create, :index]
+  end
+  resources :group_members, only: [:destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

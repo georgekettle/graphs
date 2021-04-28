@@ -1,0 +1,17 @@
+<%= render "components/header", header: "Members", back_link: info_group_path(@group), right: [{icon: 'plus', link: new_group_group_member_path(@group), classes: 'icon-btn-primary'}] %>
+
+<% @group_members.each do |group_member| %>
+  <% profile = group_member.profile %>
+  <% options = [
+    { text: 'See profile', url: profile_path(profile) },
+    { text: 'Remove user', url: group_member_path(group_member), method: 'delete', confirm_message: "Are you sure you want to remove #{profile.full_name} from the group" }] %>
+
+  <div data-controller="options" data-action="click->options#openOptions" data-options-header-value="<%= profile.full_name %>" data-options-actions-value="<%= options.to_json %>">
+    <%= render 'components/list_item',
+      link: profile_path(profile),
+      image: render('components/avatars/avatar', profile: profile, size: "medium"),
+      title: profile.full_name,
+      subtitle: group_member.role.capitalize
+    %>
+  </div>
+<% end %>

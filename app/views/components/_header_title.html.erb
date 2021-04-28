@@ -1,0 +1,18 @@
+<% if header_link %>
+  <%= link_to header_link, class:"flex flex-col items-center" do %>
+    <h1 class="text-base text-gray-900 font-medium -mb-0.5"><%= header.capitalize.truncate(20) %></h1>
+    <div class="flex items-center ml-1">
+      <% if subheader %>
+        <h4 class="text-xs text-gray-400 font-thin"><%= subheader %></h4>
+      <% else %>
+        <h4 class="text-xs text-gray-400 font-thin">See more</h4>
+      <% end %>
+      <%= render 'icons/chevron_right', classes: "stroke-current text-gray-400 h-3 w-3 stroke-2 mt-0.25 ml-1" %>
+    </div>
+  <% end %>
+<% else %>
+  <h1 class="text-base text-gray-900 font-medium -mb-0.5"><%= header.capitalize.truncate(20) %></h1>
+  <% if subheader %>
+    <h4 class="text-xs text-gray-400 font-thin"><%= subheader %></h4>
+  <% end %>
+<% end %>

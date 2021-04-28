@@ -85,7 +85,8 @@ class UserTasksController < ApplicationController
   end
 
   def set_profiles
-    params[:user_task][:profile_id].map do |profile_id|
+    return [] if params[:user_task][:profile_id].empty?
+    params[:user_task][:profile_id].first.split(',').map do |profile_id|
       Profile.find(profile_id)
     end
   end

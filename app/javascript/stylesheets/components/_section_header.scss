@@ -6,8 +6,12 @@
 
   .left {
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: $black80;
     }
   }
+}
+
+.section-header {
+  @apply text-gray-300 uppercase tracking-wider text-xs mb-2;
 }
